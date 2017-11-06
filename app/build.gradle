@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.lesun.kaka"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties' // 解决PictureSelector 中有rxjava 和项目中也有rxjava的问题
+    }
+}
+
+greendao {
+    schemaVersion 1  //数据库schema版本，也可以理解为数据库版本号
+    daoPackage 'com.lesun.kaka.basis.db'  //设置DaoMaster 、DaoSession、Dao包名
+    targetGenDir 'src/main/java'  //设置DaoMaster 、DaoSession、Dao目录
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+
+
+
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.1'
+
+
+    compile 'com.github.bumptech.glide:glide:4.2.0'
+
+
+    compile 'org.greenrobot:greendao:3.2.0'
+    testCompile 'junit:junit:4.12'
+    compile project(':lib:foundation')
+    compile files('libs/SocialSDK_QQ_Simplify.jar')
+    compile files('libs/SocialSDK_Sina_Simplify.jar')
+
+    compile files('libs/SocialSDK_WeiXin_Full.jar')
+    compile files('libs/umeng_social_api.jar')
+    compile files('libs/umeng_social_net.jar')
+    compile files('libs/umeng_social_tool.jar')
+    compile files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    compile files('libs/nineoldandroids-2.4.0.jar')
+}

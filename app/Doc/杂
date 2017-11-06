@@ -1,0 +1,14 @@
+debug.keystore
+
+路径： C:\Users\Administrator\.android\debug.keystore
+pass:android
+         MD5: 4C:E5:0F:D1:58:0F:80:B5:21:E1:55:F6:E9:C2:D0:69
+         SHA1: 14:C3:16:97:13:FD:D5:72:B0:42:98:DD:CB:EE:71:85:E0:03:B7:6D
+         SHA256: 5A:62:BA:8C:EC:28:AA:06:49:8E:0A:B4:A5:C2:2A:AE:8A:A3:46:2E:26:72:75:31:54:01:67:F0:04:C5:62:3B
+         签名算法名称: SHA1withRSA
+         版本: 1
+
+
+14c31 69713 fdd57 2b042 98ddc bee71 85e00 3b76d
+
+4ce50fd1580f80b521e155f6e9c2d069
